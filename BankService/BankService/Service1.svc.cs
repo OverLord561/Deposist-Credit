@@ -12,19 +12,55 @@ namespace BankService
     {
         public BankContext db = new BankContext();
 
-       
-
-        public string GetInfoByUserEmail(string email)
+        public List<Credit> GetAllCredits(string operationType)
         {
-            throw new NotImplementedException();
+            return db.Credits.ToList(); ;
+        }
+
+        public List<Deposit> GetAllDeposits()
+        {
+            return db.Deposits.ToList();
+        }
+
+        public List<Rate> GetAllDepositsRates()
+        {
+            return db.Rates.ToList();
+        }
+
+        public List<string> GetEmailsByOperationType(string operationType)
+        {
+            List<string> res = new List<string>();
+
+            List<UserCalculator> dto = db.UserCalculators.Where(x => x.OperationName.ToLower() == operationType.ToLower())
+                .ToList();
+            foreach (UserCalculator operation in dto)
+            {
+                
+                User _user = db.Users.FirstOrDefault( x=> x.UserID == operation.UserID);
+                if (res.IndexOf(_user.Email) == -1)
+                {
+                    res.Add(_user.Email);
+                }
+
+            }
+            return res;
+        }
+
+        public List<UserCalculator> GetInfoByUserEmail(string email)
+        {
+            User _user = db.Users.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
+            var res = db.UserCalculators.Where(x => x.UserID == _user.UserID).ToList();
+            return res;
         }
 
         public User LogIn(string email, string password)
         {
             User _user = db.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
-           
+
+
+
             #region Deposits
-            //Deposit d1 = new Deposit
+            //  Deposit d1 = new Deposit
             //{
             //    Name = "Депозит Плюс срочный",
             //    Description = "самая выгодная процентная ставка,проценты ежемесячно,при этом часть процентов зачисляется на счет «Бонус Плюс»; возможность пополнять счет;возврат по окончании срока",
@@ -70,7 +106,7 @@ namespace BankService
             //Rate r6 = new Rate { DepositID = 2, Name = "3 мес", Percents = 13 };
 
             //Rate r7 = new Rate { DepositID = 3, Name = "12 мес", Percents = 18 };
-            //Rate r8 = new Rate { DepositID = 3, Name = "6 мес", Percents = 17};
+            //Rate r8 = new Rate { DepositID = 3, Name = "6 мес", Percents = 17 };
             //Rate r9 = new Rate { DepositID = 3, Name = "3 мес", Percents = 16 };
 
             //Rate r10 = new Rate { DepositID = 4, Name = "12 мес", Percents = 15 };
@@ -94,6 +130,31 @@ namespace BankService
             //db.SaveChanges();
 
             #endregion
+            #region CreditOperations
+            //UserCalculator c = new UserCalculator { UserID = 1, OperationName = "Депозити", Date = DateTime.Now };
+            //UserCalculator c1 = new UserCalculator { UserID = 1, OperationName = "Депозити", Date = DateTime.Now };
+            //UserCalculator c2 = new UserCalculator { UserID = 1, OperationName = "Кредити", Date = DateTime.Now };
+            //db.UserCalculators.Add(c);
+            //db.UserCalculators.Add(c1);
+            //db.UserCalculators.Add(c2);
+            //db.SaveChanges();
+
+
+            #endregion
+            #region Credits
+            //Credit c1 = new Credit { Name = "Карта універсальна", Link = "https://privatbank.ua/ru/platezhnie-karty/universalna/" };
+            //Credit c2 = new Credit { Name = "Оплата частинами", Link = "https://chast.privatbank.ua/?lang=uk" };
+            //Credit c3 = new Credit { Name = "Авто в кредит", Link = "https://privatbank.ua/ru/kredity/avto-v-kredit/#" };
+            //Credit c4 = new Credit { Name = "На житло", Link = "https://privatbank.ua/ru/kredity/zhilje-v-kredit/" };
+
+            //db.Credits.Add(c1);
+            //db.Credits.Add(c2);
+            //db.Credits.Add(c3);
+            //db.Credits.Add(c4);
+            //db.SaveChanges();
+            #endregion
+
+
 
             return _user;
         }
@@ -126,6 +187,6 @@ namespace BankService
 
         }
 
-        
+
     }
 }

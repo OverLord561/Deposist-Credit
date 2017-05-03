@@ -8,6 +8,7 @@ namespace BankClient.Models
 {
     public class Deposit
     {
+        
         public int DepositID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

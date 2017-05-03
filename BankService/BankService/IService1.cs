@@ -16,10 +16,22 @@ namespace BankService
         [OperationContract]
         string RegisterUser(User user);
 
-        [OperationContract]
-        string GetInfoByUserEmail(string email);
 
-        
+        [OperationContract]
+        List<Deposit> GetAllDeposits();
+        [OperationContract]
+         List<Rate> GetAllDepositsRates();
+
+        [OperationContract]
+        List<UserCalculator> GetInfoByUserEmail(string email);
+
+       [OperationContract]
+        List<string> GetEmailsByOperationType(string operationType);
+
+        [OperationContract]
+        List<Credit> GetAllCredits(string operationType);
+
+
 
     }
 
@@ -38,6 +50,8 @@ namespace BankService
         public string Email { get; set; }
         [DataMember]
         public string Telephone { get; set; }
+        [DataMember]
+        public List<UserCalculator> UserCalculations {get;set;}
 
     }
 
@@ -60,6 +74,22 @@ namespace BankService
 
     }
 
+
+    [DataContract]
+    public class Credit
+    {
+        [DataMember]
+        public int CreditID { get; set; }
+        [DataMember]
+        public string Name { get; set; }
+        [DataMember]
+        public string Link { get; set; }
+     
+
+    }
+
+
+
     [DataContract]
     public class Rate
     {
@@ -73,6 +103,26 @@ namespace BankService
         public string Name { get; set; }
         [DataMember]
         public int Percents { get; set; }
+    }
+
+
+
+
+    [DataContract]
+    public class UserCalculator
+    {
+        [DataMember]
+        public int UserCalculatorID { get; set; }
+        [DataMember]
+        public int UserID { get; set; }
+        [DataMember]
+        public string OperationName { get; set; }
+        [DataMember]
+        public DateTime Date { get; set; }       
+
+        [DataMember]
+        public User User { get; set; }
+       
     }
 
 

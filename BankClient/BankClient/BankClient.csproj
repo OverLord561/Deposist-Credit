@@ -63,7 +63,37 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreditCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditCalculator.Designer.cs">
+      <DependentUpon>CreditCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditsForm.Designer.cs">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dal.cs" />
+    <Compile Include="DepositCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepositCalculator.Designer.cs">
+      <DependentUpon>DepositCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepositInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepositInfoForm.Designer.cs">
+      <DependentUpon>DepositInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepositsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepositsForm.Designer.cs">
+      <DependentUpon>DepositsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,8 +106,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704271624531_InitialCreate.cs" />
+    <Compile Include="Migrations\201704271624531_InitialCreate.Designer.cs">
+      <DependentUpon>201704271624531_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704271652456_UserOperations started.cs" />
+    <Compile Include="Migrations\201704271652456_UserOperations started.Designer.cs">
+      <DependentUpon>201704271652456_UserOperations started.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BankContext.cs" />
     <Compile Include="Models\Deposit.cs" />
+    <Compile Include="Models\DepositDTO.cs" />
     <Compile Include="Models\Rate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,11 +135,32 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreditCalculator.resx">
+      <DependentUpon>CreditCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditsForm.resx">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepositCalculator.resx">
+      <DependentUpon>DepositCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepositInfoForm.resx">
+      <DependentUpon>DepositInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepositsForm.resx">
+      <DependentUpon>DepositsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704271624531_InitialCreate.resx">
+      <DependentUpon>201704271624531_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704271652456_UserOperations started.resx">
+      <DependentUpon>201704271652456_UserOperations started.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,7 +185,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ServiceReference1\BankClient.ServiceReference1.Credit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BankClient.ServiceReference1.Deposit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BankClient.ServiceReference1.Rate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BankClient.ServiceReference1.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BankClient.ServiceReference1.UserCalculator.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\Service1.wsdl" />
@@ -135,6 +208,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

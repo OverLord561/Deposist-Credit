@@ -106,13 +106,13 @@
   <ItemGroup>
     <Compile Include="BankContext.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="Migrations\201704211923312_InitialCreate.cs" />
-    <Compile Include="Migrations\201704211923312_InitialCreate.Designer.cs">
-      <DependentUpon>201704211923312_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201705031722021_InitialCreate.cs" />
+    <Compile Include="Migrations\201705031722021_InitialCreate.Designer.cs">
+      <DependentUpon>201705031722021_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704221859311_Deposits.cs" />
-    <Compile Include="Migrations\201704221859311_Deposits.Designer.cs">
-      <DependentUpon>201704221859311_Deposits.cs</DependentUpon>
+    <Compile Include="Migrations\201705031838063_Credits.cs" />
+    <Compile Include="Migrations\201705031838063_Credits.Designer.cs">
+      <DependentUpon>201705031838063_Credits.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DepositDTO.cs" />
@@ -138,11 +138,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704211923312_InitialCreate.resx">
-      <DependentUpon>201704211923312_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705031722021_InitialCreate.resx">
+      <DependentUpon>201705031722021_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704221859311_Deposits.resx">
-      <DependentUpon>201704221859311_Deposits.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705031838063_Credits.resx">
+      <DependentUpon>201705031838063_Credits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,5 +17,7 @@ namespace BankClient.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Deposit> Deposits { get; set; }
         public DbSet<Rate> Rates { get; set; }
+        public DbSet<UserCalculator> UserCalculators { get; set; }
+
     }
 }

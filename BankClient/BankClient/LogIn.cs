@@ -25,10 +25,10 @@ namespace BankClient
             string email = textBoxEmail.Text;
             string pass = textBoxPassword.Text;
 
-            manager.GetAllDeposits();
+           // manager.GetAllDeposits();
 
 
-            email = "admin";
+            email = "obiivan@mail.ru";
             pass = "admin";
 
             if (email == "" || pass == "")
