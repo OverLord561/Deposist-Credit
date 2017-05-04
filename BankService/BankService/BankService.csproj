@@ -114,6 +114,10 @@
     <Compile Include="Migrations\201705031838063_Credits.Designer.cs">
       <DependentUpon>201705031838063_Credits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705041616148_small credit.cs" />
+    <Compile Include="Migrations\201705041616148_small credit.Designer.cs">
+      <DependentUpon>201705041616148_small credit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DepositDTO.cs" />
     <Compile Include="Service1.svc.cs">
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705031838063_Credits.resx">
       <DependentUpon>201705031838063_Credits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705041616148_small credit.resx">
+      <DependentUpon>201705041616148_small credit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -510,10 +510,10 @@ namespace BankClient.ServiceReference1 {
         private int CreditIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LinkField;
+        private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private string nLinkField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -539,19 +539,6 @@ namespace BankClient.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Link {
-            get {
-                return this.LinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LinkField, value) != true)) {
-                    this.LinkField = value;
-                    this.RaisePropertyChanged("Link");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name {
             get {
                 return this.NameField;
@@ -560,6 +547,19 @@ namespace BankClient.ServiceReference1 {
                 if ((object.ReferenceEquals(this.NameField, value) != true)) {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string nLink {
+            get {
+                return this.nLinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nLinkField, value) != true)) {
+                    this.nLinkField = value;
+                    this.RaisePropertyChanged("nLink");
                 }
             }
         }
@@ -583,6 +583,12 @@ namespace BankClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LogIn", ReplyAction="http://tempuri.org/IService1/LogInResponse")]
         System.Threading.Tasks.Task<BankClient.ServiceReference1.User> LogInAsync(string name, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCalculator", ReplyAction="http://tempuri.org/IService1/UpdateCalculatorResponse")]
+        void UpdateCalculator(BankClient.ServiceReference1.UserCalculator calc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCalculator", ReplyAction="http://tempuri.org/IService1/UpdateCalculatorResponse")]
+        System.Threading.Tasks.Task UpdateCalculatorAsync(BankClient.ServiceReference1.UserCalculator calc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterUser", ReplyAction="http://tempuri.org/IService1/RegisterUserResponse")]
         string RegisterUser(BankClient.ServiceReference1.User user);
@@ -619,6 +625,24 @@ namespace BankClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCredits", ReplyAction="http://tempuri.org/IService1/GetAllCreditsResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<BankClient.ServiceReference1.Credit>> GetAllCreditsAsync(string operationType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCredit", ReplyAction="http://tempuri.org/IService1/CreateCreditResponse")]
+        void CreateCredit(BankClient.ServiceReference1.Credit cr);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCredit", ReplyAction="http://tempuri.org/IService1/CreateCreditResponse")]
+        System.Threading.Tasks.Task CreateCreditAsync(BankClient.ServiceReference1.Credit cr);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateDeposit", ReplyAction="http://tempuri.org/IService1/CreateDepositResponse")]
+        void CreateDeposit(BankClient.ServiceReference1.Deposit dep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateDeposit", ReplyAction="http://tempuri.org/IService1/CreateDepositResponse")]
+        System.Threading.Tasks.Task CreateDepositAsync(BankClient.ServiceReference1.Deposit dep);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserIDByEmail", ReplyAction="http://tempuri.org/IService1/GetUserIDByEmailResponse")]
+        int GetUserIDByEmail(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserIDByEmail", ReplyAction="http://tempuri.org/IService1/GetUserIDByEmailResponse")]
+        System.Threading.Tasks.Task<int> GetUserIDByEmailAsync(string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -654,6 +678,14 @@ namespace BankClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<BankClient.ServiceReference1.User> LogInAsync(string name, string password) {
             return base.Channel.LogInAsync(name, password);
+        }
+        
+        public void UpdateCalculator(BankClient.ServiceReference1.UserCalculator calc) {
+            base.Channel.UpdateCalculator(calc);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCalculatorAsync(BankClient.ServiceReference1.UserCalculator calc) {
+            return base.Channel.UpdateCalculatorAsync(calc);
         }
         
         public string RegisterUser(BankClient.ServiceReference1.User user) {
@@ -702,6 +734,30 @@ namespace BankClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<BankClient.ServiceReference1.Credit>> GetAllCreditsAsync(string operationType) {
             return base.Channel.GetAllCreditsAsync(operationType);
+        }
+        
+        public void CreateCredit(BankClient.ServiceReference1.Credit cr) {
+            base.Channel.CreateCredit(cr);
+        }
+        
+        public System.Threading.Tasks.Task CreateCreditAsync(BankClient.ServiceReference1.Credit cr) {
+            return base.Channel.CreateCreditAsync(cr);
+        }
+        
+        public void CreateDeposit(BankClient.ServiceReference1.Deposit dep) {
+            base.Channel.CreateDeposit(dep);
+        }
+        
+        public System.Threading.Tasks.Task CreateDepositAsync(BankClient.ServiceReference1.Deposit dep) {
+            return base.Channel.CreateDepositAsync(dep);
+        }
+        
+        public int GetUserIDByEmail(string email) {
+            return base.Channel.GetUserIDByEmail(email);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetUserIDByEmailAsync(string email) {
+            return base.Channel.GetUserIDByEmailAsync(email);
         }
     }
 }

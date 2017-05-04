@@ -12,9 +12,21 @@ namespace BankService
     {
         public BankContext db = new BankContext();
 
+        public void CreateCredit(Credit cr)
+        {
+            db.Credits.Add(cr);
+            db.SaveChanges();
+        }
+
+        public void CreateDeposit(Deposit dep)
+        {
+            db.Deposits.Add(dep);
+            db.SaveChanges();
+        }
+
         public List<Credit> GetAllCredits(string operationType)
         {
-            return db.Credits.ToList(); ;
+            return db.Credits.ToList(); 
         }
 
         public List<Deposit> GetAllDeposits()
@@ -51,6 +63,12 @@ namespace BankService
             User _user = db.Users.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
             var res = db.UserCalculators.Where(x => x.UserID == _user.UserID).ToList();
             return res;
+        }
+
+        public int GetUserIDByEmail(string email)
+        {
+            User u = db.Users.FirstOrDefault(x => x.Email == email);
+            return u.UserID;
         }
 
         public User LogIn(string email, string password)
@@ -142,10 +160,10 @@ namespace BankService
 
             #endregion
             #region Credits
-            //Credit c1 = new Credit { Name = "Карта універсальна", Link = "https://privatbank.ua/ru/platezhnie-karty/universalna/" };
-            //Credit c2 = new Credit { Name = "Оплата частинами", Link = "https://chast.privatbank.ua/?lang=uk" };
-            //Credit c3 = new Credit { Name = "Авто в кредит", Link = "https://privatbank.ua/ru/kredity/avto-v-kredit/#" };
-            //Credit c4 = new Credit { Name = "На житло", Link = "https://privatbank.ua/ru/kredity/zhilje-v-kredit/" };
+            //Credit c1 = new Credit { Name = "Карта універсальна", nLink = "https://privatbank.ua/ru/platezhnie-karty/universalna/" };
+            //Credit c2 = new Credit { Name = "Оплата частинами", nLink = "https://chast.privatbank.ua/?lang=uk" };
+            //Credit c3 = new Credit { Name = "Авто в кредит", nLink = "https://privatbank.ua/ru/kredity/avto-v-kredit/#" };
+            //Credit c4 = new Credit { Name = "На житло", nLink = "https://privatbank.ua/ru/kredity/zhilje-v-kredit/" };
 
             //db.Credits.Add(c1);
             //db.Credits.Add(c2);
@@ -187,6 +205,11 @@ namespace BankService
 
         }
 
-
+        public void UpdateCalculator(UserCalculator calc)
+        {
+            
+           db.UserCalculators.Add(calc);
+            db.SaveChanges();
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace BankService
     {
         [OperationContract]
         User LogIn(string name, string password);
+        [OperationContract]
+        void UpdateCalculator(UserCalculator calc);
 
         [OperationContract]
         string RegisterUser(User user);
@@ -32,7 +34,13 @@ namespace BankService
         List<Credit> GetAllCredits(string operationType);
 
 
+        [OperationContract]
+        void CreateCredit(Credit cr);
+        [OperationContract]
+        void CreateDeposit(Deposit dep);
 
+        [OperationContract]
+        int GetUserIDByEmail(string email);
     }
 
     [DataContract]
@@ -83,7 +91,7 @@ namespace BankService
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public string Link { get; set; }
+        public string nLink { get; set; }
      
 
     }

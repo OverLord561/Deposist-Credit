@@ -53,3 +53,5 @@ D:\Programs\Deposist-Credit\BankClient\BankClient\obj\Debug\BankClient.Migration
 D:\Programs\Deposist-Credit\BankClient\BankClient\obj\Debug\BankClient.DepositsForm.resources
 D:\Programs\Deposist-Credit\BankClient\BankClient\obj\Debug\BankClient.DepositInfoForm.resources
 D:\Programs\Deposist-Credit\BankClient\BankClient\obj\Debug\BankClient.CreditsForm.resources
+D:\Programs\Deposist-Credit\BankClient\BankClient\obj\Debug\BankClient.CreateCredit.resources
+D:\Programs\Deposist-Credit\BankClient\BankClient\obj\Debug\BankClient.CreateDeposit.resources

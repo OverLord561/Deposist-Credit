@@ -17,10 +17,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateCalculator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="calc" nillable="true" type="q2:UserCalculator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCalculatorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegisterUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="user" nillable="true" type="q2:User" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="user" nillable="true" type="q3:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -39,7 +51,7 @@
   <xs:element name="GetAllDepositsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetAllDepositsResult" nillable="true" type="q3:ArrayOfDeposit" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetAllDepositsResult" nillable="true" type="q4:ArrayOfDeposit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -51,7 +63,7 @@
   <xs:element name="GetAllDepositsRatesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetAllDepositsRatesResult" nillable="true" type="q4:ArrayOfRate" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetAllDepositsRatesResult" nillable="true" type="q5:ArrayOfRate" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,7 +77,7 @@
   <xs:element name="GetInfoByUserEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetInfoByUserEmailResult" nillable="true" type="q5:ArrayOfUserCalculator" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetInfoByUserEmailResult" nillable="true" type="q6:ArrayOfUserCalculator" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -79,7 +91,7 @@
   <xs:element name="GetEmailsByOperationTypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEmailsByOperationTypeResult" nillable="true" type="q6:ArrayOfstring" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEmailsByOperationTypeResult" nillable="true" type="q7:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +105,45 @@
   <xs:element name="GetAllCreditsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetAllCreditsResult" nillable="true" type="q7:ArrayOfCredit" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="GetAllCreditsResult" nillable="true" type="q8:ArrayOfCredit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCredit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="cr" nillable="true" type="q9:Credit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCreditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDeposit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BankService" minOccurs="0" name="dep" nillable="true" type="q10:Deposit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDepositResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserIDByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserIDByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserIDByEmailResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

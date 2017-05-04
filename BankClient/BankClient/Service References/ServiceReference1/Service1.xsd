@@ -70,8 +70,8 @@
   <xs:complexType name="Credit">
     <xs:sequence>
       <xs:element minOccurs="0" name="CreditID" type="xs:int" />
-      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nLink" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Credit" nillable="true" type="tns:Credit" />

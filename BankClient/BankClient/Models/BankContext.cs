@@ -19,5 +19,7 @@ namespace BankClient.Models
         public DbSet<Rate> Rates { get; set; }
         public DbSet<UserCalculator> UserCalculators { get; set; }
 
+        public DbSet<Credit> Credits { get; set; }
+
     }
 }

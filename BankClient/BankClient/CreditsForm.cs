@@ -37,7 +37,7 @@ namespace BankClient
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            System.Diagnostics.Process.Start(list[e.RowIndex].Link);
+            System.Diagnostics.Process.Start(list[e.RowIndex].nLink);
         }
     }
 }

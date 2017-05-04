@@ -14,6 +14,12 @@
   <wsdl:message name="IService1_LogIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:LogInResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateCalculator_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCalculator" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCalculator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCalculatorResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_RegisterUser_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterUser" />
   </wsdl:message>
@@ -50,10 +56,32 @@
   <wsdl:message name="IService1_GetAllCredits_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCreditsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CreateCredit_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCredit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateCredit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateDeposit_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDeposit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateDeposit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserIDByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserIDByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDByEmailResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="LogIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LogIn" message="tns:IService1_LogIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LogInResponse" message="tns:IService1_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCalculator">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCalculator" message="tns:IService1_UpdateCalculator_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCalculatorResponse" message="tns:IService1_UpdateCalculator_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RegisterUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterUser" message="tns:IService1_RegisterUser_InputMessage" />
@@ -79,11 +107,32 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllCredits" message="tns:IService1_GetAllCredits_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllCreditsResponse" message="tns:IService1_GetAllCredits_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CreateCredit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateCredit" message="tns:IService1_CreateCredit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateCreditResponse" message="tns:IService1_CreateCredit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeposit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateDeposit" message="tns:IService1_CreateDeposit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateDepositResponse" message="tns:IService1_CreateDeposit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserIDByEmail" message="tns:IService1_GetUserIDByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserIDByEmailResponse" message="tns:IService1_GetUserIDByEmail_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LogIn">
       <soap:operation soapAction="http://tempuri.org/IService1/LogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCalculator">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCalculator" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -138,6 +187,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllCredits">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCredit">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeposit">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateDeposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDByEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserIDByEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

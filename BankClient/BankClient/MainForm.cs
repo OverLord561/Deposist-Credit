@@ -25,9 +25,11 @@ namespace BankClient
         {
             UserEmail = email;
             InitializeComponent();
-            if (UserEmail == "admin@mail.ru")
+            if (UserEmail == "obiivan@mail.ru")
             {
                 ForAdminToolStripMenuItem.Visible = true;
+                notifGroupBox.Visible = true;
+                адмініструванняToolStripMenuItem.Visible = true;
             }
             else
             {
@@ -45,7 +47,7 @@ namespace BankClient
         private void розрахунокКредитівToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreditCalculator _credit = new CreditCalculator(UserEmail);
-            var res = _bankService.GetInfoByUserEmail(UserEmail);
+            
             _credit.Show();
         }
 
@@ -73,55 +75,61 @@ namespace BankClient
         private async void button1_Click(object sender, EventArgs e)
         {
 
-            List<string>request = _bankService.GetEmailsByOperationType(this.operationType);        
+            List<string> request = _bankService.GetEmailsByOperationType(this.operationType);
 
-           
+
             foreach (string mail in request)
             {
-                 SendMails(mail, "Вас цікавлять депозити? Ми обов'язково вам допоможемо. Замовте зворотній зв'язок!");
+                switch (this.operationType)
+                {
+                    case "Депозити": SendMails(mail, "Вас цікавлять депозити? Ми обов'язково вам допоможемо. Замовте зворотній зв'язок!"); break;
+                    case "Кредити": SendMails(mail, "Вас цікавлять кредити? Ми обов'язково вам допоможемо. Замовте зворотній зв'язок!"); break;
+                    default: break;
+                }
+
             }
-            
-                
-                MessageBox.Show("Успішно надіслано " + request.Count + " повідомлень", "Розсилка");
-           
-                
+
+
+            MessageBox.Show("Успішно надіслано " + request.Count + " повідомлень", "Розсилка");
+
+
         }
 
-      public static Task SendMails(string mail, string details)
+        public static Task SendMails(string mail, string details)
         {
-            return Task.Factory.StartNew( ()=>
-            {
-                var fromAddress = new MailAddress("yurapuk452@gmail.com", "GV-Soft");
+            return Task.Factory.StartNew(() =>
+           {
+               var fromAddress = new MailAddress("yurapuk452@gmail.com", "GV-Soft");
 
-                System.Net.Mail.MailAddress toAddress = new MailAddress(mail, "Yurii PUK");
-                    //var toAddress = new MailAddress("yurapuk452@mail.ru", "Yurii Puk");
+               System.Net.Mail.MailAddress toAddress = new MailAddress(mail, "Yurii PUK");
+               //var toAddress = new MailAddress("yurapuk452@mail.ru", "Yurii Puk");
 
 
 
-                    const string fromPassword = "0953393612puk";
-                    const string subject = "Депозити!";
-                     string body = details;
+               const string fromPassword = "0953393612puk";
+               const string subject = "Депозити!";
+               string body = details;
 
-                    var smtp = new SmtpClient
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-                    };
-                    using (var message = new MailMessage(fromAddress, toAddress)
-                    {
-                        Subject = subject,
-                        Body = body
-                    })
-                    {
-                        smtp.Send(message);
+               var smtp = new SmtpClient
+               {
+                   Host = "smtp.gmail.com",
+                   Port = 587,
+                   EnableSsl = true,
+                   DeliveryMethod = SmtpDeliveryMethod.Network,
+                   UseDefaultCredentials = false,
+                   Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+               };
+               using (var message = new MailMessage(fromAddress, toAddress)
+               {
+                   Subject = subject,
+                   Body = body
+               })
+               {
+                   smtp.Send(message);
 
-                    }
-                
-            });
+               }
+
+           });
         }
 
         private void депозитиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,6 +142,19 @@ namespace BankClient
         {
             CreditsForm credform = new CreditsForm();
             credform.Show();
+        }
+
+        private void депозитиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateDeposit form = new CreateDeposit();
+            form.Show();
+        }
+
+        private void кредитиToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateCredit form = new CreateCredit();
+            form.Show();
+
         }
     }
 }

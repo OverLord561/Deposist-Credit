@@ -49,3 +49,4 @@ D:\Programs\Deposist-Credit\BankService\BankService\obj\Debug\BankService.pdb
 D:\Programs\Deposist-Credit\BankService\BankService\obj\Debug\BankService.Migrations.InitialCreate.resources
 D:\Programs\Deposist-Credit\BankService\BankService\obj\Debug\BankService.csproj.GenerateResource.Cache
 D:\Programs\Deposist-Credit\BankService\BankService\obj\Debug\BankService.Migrations.Credits.resources
+D:\Programs\Deposist-Credit\BankService\BankService\obj\Debug\BankService.Migrations.smallcredit.resources
