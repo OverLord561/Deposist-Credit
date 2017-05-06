@@ -99,14 +99,14 @@ namespace BankClient
         {
             return Task.Factory.StartNew(() =>
            {
-               var fromAddress = new MailAddress("yurapuk452@gmail.com", "Kutz-Soft");
+               var fromAddress = new MailAddress("obivan561@gmail.com", "Kutz-Soft");
 
                System.Net.Mail.MailAddress toAddress = new MailAddress(mail);
                //var toAddress = new MailAddress("yurapuk452@mail.ru", "Yurii Puk");
 
 
 
-               const string fromPassword = "0953393612puk";
+               const string fromPassword = "89ZXcvbNM";
                const string subject = "Депозити!";
                string body = details;
 
