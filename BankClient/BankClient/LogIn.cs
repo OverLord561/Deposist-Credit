@@ -28,8 +28,8 @@ namespace BankClient
            // manager.GetAllDeposits();
 
 
-            email = "obiivan@mail.ru";
-            pass = "admin";
+            //email = "obiivan@mail.ru";
+            //pass = "admin";
 
             if (email == "" || pass == "")
             {

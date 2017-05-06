@@ -73,8 +73,17 @@ namespace BankService
 
         public User LogIn(string email, string password)
         {
-            User _user = db.Users.FirstOrDefault(x => x.Email == email && x.Password == password);
+            User _user_e = db.Users.FirstOrDefault(x => x.Email == email);
 
+            
+            if (_user_e == null) return null;
+
+           // _user_e = Manager.DecryptUser(_user_e);
+
+           
+            if (Manager.DecryptUser(_user_e).Password == password) return _user_e;
+            else return null;
+            
 
 
             #region Deposits
@@ -174,7 +183,7 @@ namespace BankService
 
 
 
-            return _user;
+            
         }
 
         public string RegisterUser(User user)
@@ -190,7 +199,7 @@ namespace BankService
 
                 try
                 {
-                    // user = Manager.DecryptUser(user);
+                    user = Manager.EncryptUser(user);
                     db.Users.Add(user);
                     db.SaveChanges();
                     return user.Name;

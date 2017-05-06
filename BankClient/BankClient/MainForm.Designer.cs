@@ -37,20 +37,22 @@
             this.вихідToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.проПрограмуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ForAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.надіслатиАкціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загальнаІнформаціяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кредитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.депозитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notifGroupBox = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.адмініструванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кредитиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.депозитиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ForAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.надіслатиАкціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.notifGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -117,6 +119,7 @@
             this.вихідToolStripMenuItem.Name = "вихідToolStripMenuItem";
             this.вихідToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.вихідToolStripMenuItem.Text = "Вихід";
+            this.вихідToolStripMenuItem.Click += new System.EventHandler(this.вихідToolStripMenuItem_Click);
             // 
             // проПрограмуToolStripMenuItem
             // 
@@ -134,24 +137,6 @@
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
             this.aboutToolStripMenuItem1.Text = "Про програму";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
-            // 
-            // ForAdminToolStripMenuItem
-            // 
-            this.ForAdminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.надіслатиАкціїToolStripMenuItem});
-            this.ForAdminToolStripMenuItem.Name = "ForAdminToolStripMenuItem";
-            this.ForAdminToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.ForAdminToolStripMenuItem.Text = "Журнал";
-            this.ForAdminToolStripMenuItem.Visible = false;
-            // 
-            // надіслатиАкціїToolStripMenuItem
-            // 
-            this.надіслатиАкціїToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.надіслатиАкціїToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("надіслатиАкціїToolStripMenuItem.Image")));
-            this.надіслатиАкціїToolStripMenuItem.Name = "надіслатиАкціїToolStripMenuItem";
-            this.надіслатиАкціїToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.надіслатиАкціїToolStripMenuItem.Text = "Інформувати про акції";
-            this.надіслатиАкціїToolStripMenuItem.Click += new System.EventHandler(this.надіслатиАкціїToolStripMenuItem_Click);
             // 
             // загальнаІнформаціяToolStripMenuItem
             // 
@@ -180,27 +165,61 @@
             this.депозитиToolStripMenuItem.Text = "Депозити";
             this.депозитиToolStripMenuItem.Click += new System.EventHandler(this.депозитиToolStripMenuItem_Click);
             // 
+            // адмініструванняToolStripMenuItem
+            // 
+            this.адмініструванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.кредитиToolStripMenuItem1,
+            this.депозитиToolStripMenuItem1});
+            this.адмініструванняToolStripMenuItem.Name = "адмініструванняToolStripMenuItem";
+            this.адмініструванняToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.адмініструванняToolStripMenuItem.Text = "Адміністрування";
+            this.адмініструванняToolStripMenuItem.Visible = false;
+            // 
+            // кредитиToolStripMenuItem1
+            // 
+            this.кредитиToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("кредитиToolStripMenuItem1.Image")));
+            this.кредитиToolStripMenuItem1.Name = "кредитиToolStripMenuItem1";
+            this.кредитиToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.кредитиToolStripMenuItem1.Text = "Кредити";
+            this.кредитиToolStripMenuItem1.Click += new System.EventHandler(this.кредитиToolStripMenuItem1_Click);
+            // 
+            // депозитиToolStripMenuItem1
+            // 
+            this.депозитиToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("депозитиToolStripMenuItem1.Image")));
+            this.депозитиToolStripMenuItem1.Name = "депозитиToolStripMenuItem1";
+            this.депозитиToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.депозитиToolStripMenuItem1.Text = "Депозити";
+            this.депозитиToolStripMenuItem1.Click += new System.EventHandler(this.депозитиToolStripMenuItem1_Click);
+            // 
+            // ForAdminToolStripMenuItem
+            // 
+            this.ForAdminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.надіслатиАкціїToolStripMenuItem});
+            this.ForAdminToolStripMenuItem.Name = "ForAdminToolStripMenuItem";
+            this.ForAdminToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.ForAdminToolStripMenuItem.Text = "Журнал";
+            this.ForAdminToolStripMenuItem.Visible = false;
+            // 
+            // надіслатиАкціїToolStripMenuItem
+            // 
+            this.надіслатиАкціїToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.надіслатиАкціїToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("надіслатиАкціїToolStripMenuItem.Image")));
+            this.надіслатиАкціїToolStripMenuItem.Name = "надіслатиАкціїToolStripMenuItem";
+            this.надіслатиАкціїToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.надіслатиАкціїToolStripMenuItem.Text = "Інформувати про акції";
+            this.надіслатиАкціїToolStripMenuItem.Click += new System.EventHandler(this.надіслатиАкціїToolStripMenuItem_Click);
+            // 
             // notifGroupBox
             // 
             this.notifGroupBox.Controls.Add(this.groupBox1);
             this.notifGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notifGroupBox.Location = new System.Drawing.Point(12, 72);
+            this.notifGroupBox.Location = new System.Drawing.Point(12, 134);
             this.notifGroupBox.Name = "notifGroupBox";
-            this.notifGroupBox.Size = new System.Drawing.Size(522, 229);
+            this.notifGroupBox.Size = new System.Drawing.Size(522, 158);
             this.notifGroupBox.TabIndex = 2;
             this.notifGroupBox.TabStop = false;
             this.notifGroupBox.Text = "Оповіщення користувачів";
             this.notifGroupBox.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(339, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Розіслати";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -213,6 +232,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Тип операції:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(339, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 31);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Розіслати";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // radioButton2
             // 
@@ -242,50 +271,46 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 34);
+            this.label2.Location = new System.Drawing.Point(26, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Hello";
             // 
-            // адмініструванняToolStripMenuItem
+            // label3
             // 
-            this.адмініструванняToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.кредитиToolStripMenuItem1,
-            this.депозитиToolStripMenuItem1});
-            this.адмініструванняToolStripMenuItem.Name = "адмініструванняToolStripMenuItem";
-            this.адмініструванняToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-            this.адмініструванняToolStripMenuItem.Text = "Адміністрування";
-            this.адмініструванняToolStripMenuItem.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(399, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Операції  - розрахунок калькулятор кредитів, депозитівю.";
             // 
-            // кредитиToolStripMenuItem1
+            // label4
             // 
-            this.кредитиToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("кредитиToolStripMenuItem1.Image")));
-            this.кредитиToolStripMenuItem1.Name = "кредитиToolStripMenuItem1";
-            this.кредитиToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.кредитиToolStripMenuItem1.Text = "Кредити";
-            this.кредитиToolStripMenuItem1.Click += new System.EventHandler(this.кредитиToolStripMenuItem1_Click);
-            // 
-            // депозитиToolStripMenuItem1
-            // 
-            this.депозитиToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("депозитиToolStripMenuItem1.Image")));
-            this.депозитиToolStripMenuItem1.Name = "депозитиToolStripMenuItem1";
-            this.депозитиToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.депозитиToolStripMenuItem1.Text = "Депозити";
-            this.депозитиToolStripMenuItem1.Click += new System.EventHandler(this.депозитиToolStripMenuItem1_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(505, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Загальна інформація - доступні кредити та депозити комерційного банку.";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 313);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.notifGroupBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Головна форма";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.notifGroupBox.ResumeLayout(false);
@@ -320,5 +345,7 @@
         private System.Windows.Forms.ToolStripMenuItem адмініструванняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem кредитиToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem депозитиToolStripMenuItem1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

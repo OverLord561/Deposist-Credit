@@ -28,7 +28,7 @@ namespace BankClient
             if (UserEmail == "obiivan@mail.ru")
             {
                 ForAdminToolStripMenuItem.Visible = true;
-                notifGroupBox.Visible = true;
+                
                 адмініструванняToolStripMenuItem.Visible = true;
             }
             else
@@ -99,9 +99,9 @@ namespace BankClient
         {
             return Task.Factory.StartNew(() =>
            {
-               var fromAddress = new MailAddress("yurapuk452@gmail.com", "GV-Soft");
+               var fromAddress = new MailAddress("yurapuk452@gmail.com", "Kutz-Soft");
 
-               System.Net.Mail.MailAddress toAddress = new MailAddress(mail, "Yurii PUK");
+               System.Net.Mail.MailAddress toAddress = new MailAddress(mail);
                //var toAddress = new MailAddress("yurapuk452@mail.ru", "Yurii Puk");
 
 
@@ -156,5 +156,12 @@ namespace BankClient
             form.Show();
 
         }
+
+        private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+       
     }
 }

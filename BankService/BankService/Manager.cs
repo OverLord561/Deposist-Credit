@@ -101,22 +101,22 @@ namespace BankService
         }
         public static User DecryptUser(User user)
         {
-            user.Email = Encrypt(user.Email);
-            user.Password = Encrypt(user.Password);
-            user.SecondName = Encrypt(user.SecondName);
-            user.Telephone = Encrypt(user.Telephone);
-            user.Name = Encrypt(user.Name);
-            return user;
-        }
-
-
-        private static User EncryptUser(User user)
-        {
-            user.Email = Decrypt(user.Email);
+           
             user.Password = Decrypt(user.Password);
             user.SecondName = Decrypt(user.SecondName);
             user.Telephone = Decrypt(user.Telephone);
             user.Name = Decrypt(user.Name);
+            return user;
+        }
+
+
+        public static User EncryptUser(User user)
+        {
+            
+            user.Password = Encrypt(user.Password);
+            user.SecondName = Encrypt(user.SecondName);
+            user.Telephone = Encrypt(user.Telephone);
+            user.Name = Encrypt(user.Name);
             return user;
         }
     }
