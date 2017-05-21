@@ -29,7 +29,7 @@ namespace BankClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm.SendMails(MainForm.UserEmail, "Потрібна консультація за кредитами.");
+            MainForm.SendNeedHelp(MainForm.UserEmail, "Потрібна консультація за кредитами.");
             MessageBox.Show("Заявку надіслано!", "Зворотній зв'язок");
 
         }

@@ -25,7 +25,7 @@ namespace BankClient
         {
             UserEmail = email;
             InitializeComponent();
-            if (UserEmail == "obiivan@mail.ru")
+            if (UserEmail == "kuc9696@mail.ru")
             {
                 ForAdminToolStripMenuItem.Visible = true;
                 
@@ -131,6 +131,46 @@ namespace BankClient
 
            });
         }
+
+
+
+        public static Task SendNeedHelp(string mail, string details)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                var fromAddress = new MailAddress("diplomspamer@gmail.com", mail);
+
+                System.Net.Mail.MailAddress toAddress = new MailAddress("obivan561@gmail.com");
+                //var toAddress = new MailAddress("yurapuk452@mail.ru", "Yurii Puk");
+
+
+
+                const string fromPassword = "89ZXcvbNM";
+                const string subject = "Додатковы питання!";
+                string body = details;
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(message);
+
+                }
+
+            });
+        }
+
 
         private void депозитиToolStripMenuItem_Click(object sender, EventArgs e)
         {
