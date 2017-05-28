@@ -72,11 +72,13 @@ namespace BankClient
 
             UserCalculator c = new UserCalculator { Date = DateTime.Now, UserID = _bankService.GetUserIDByEmail(MainForm.UserEmail), OperationName = "Кредити" };
             _bankService.UpdateCalculator(c);
+            label5.Text = data[data.Count -1].Amount.ToString();
         }
 
         private void De()
         {
             double sum = 0;
+            double total = 0;
            
             List<Models.CreditGraph> data = new List<Models.CreditGraph>();
             for (int i = 1; i <= Convert.ToInt32(textBox2.Text); i++)
@@ -86,6 +88,7 @@ namespace BankClient
                     + ((Convert.ToInt32(textBox1.Text) -( che* i))*0.1/12);
                 Models.CreditGraph g = new Models.CreditGraph { Amount = Convert.ToInt32(sum ), Month = i };
                 data.Add(g);
+                total += sum;
             }
 
 
@@ -101,6 +104,7 @@ namespace BankClient
 
             UserCalculator c = new UserCalculator { Date = DateTime.Now, UserID = _bankService.GetUserIDByEmail(MainForm.UserEmail), OperationName = "Кредити" };
             _bankService.UpdateCalculator(c);
+            label5.Text = total.ToString();
         }
     }
 }

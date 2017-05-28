@@ -26,7 +26,7 @@ namespace BankService
 
         public List<Credit> GetAllCredits(string operationType)
         {
-            return db.Credits.ToList(); 
+            return db.Credits.ToList();
         }
 
         public List<Deposit> GetAllDeposits()
@@ -47,8 +47,8 @@ namespace BankService
                 .ToList();
             foreach (UserCalculator operation in dto)
             {
-                
-                User _user = db.Users.FirstOrDefault( x=> x.UserID == operation.UserID);
+
+                User _user = db.Users.FirstOrDefault(x => x.UserID == operation.UserID);
                 if (res.IndexOf(_user.Email) == -1)
                 {
                     res.Add(_user.Email);
@@ -75,19 +75,15 @@ namespace BankService
         {
             User _user_e = db.Users.FirstOrDefault(x => x.Email == email);
 
-            
             if (_user_e == null) return null;
 
-           // _user_e = Manager.DecryptUser(_user_e);
-
-           
             if (Manager.DecryptUser(_user_e).Password == password) return _user_e;
             else return null;
-            
 
 
-            #region Deposits
-            //  Deposit d1 = new Deposit
+
+            //#region Deposits
+            //Deposit d1 = new Deposit
             //{
             //    Name = "Депозит Плюс срочный",
             //    Description = "самая выгодная процентная ставка,проценты ежемесячно,при этом часть процентов зачисляется на счет «Бонус Плюс»; возможность пополнять счет;возврат по окончании срока",
@@ -122,8 +118,8 @@ namespace BankService
             //db.Deposits.Add(d3);
             //db.Deposits.Add(d4);
             //db.SaveChanges();
-            #endregion
-            #region DepoRates
+            //#endregion
+            //#region DepoRates
             //Rate r1 = new Rate { DepositID = 1, Name = "12 мес", Percents = 18 };
             //Rate r2 = new Rate { DepositID = 1, Name = "6 мес", Percents = 17 };
             //Rate r3 = new Rate { DepositID = 1, Name = "3 мес", Percents = 16 };
@@ -156,34 +152,34 @@ namespace BankService
             //db.Rates.Add(r13);
             //db.SaveChanges();
 
-            #endregion
-            #region CreditOperations
-            //UserCalculator c = new UserCalculator { UserID = 1, OperationName = "Депозити", Date = DateTime.Now };
-            //UserCalculator c1 = new UserCalculator { UserID = 1, OperationName = "Депозити", Date = DateTime.Now };
-            //UserCalculator c2 = new UserCalculator { UserID = 1, OperationName = "Кредити", Date = DateTime.Now };
+            //#endregion
+            //#region CreditOperations
+            //UserCalculator c = new UserCalculator { UserID = 2, OperationName = "Депозити", Date = DateTime.Now };
+            //UserCalculator c1 = new UserCalculator { UserID = 2, OperationName = "Депозити", Date = DateTime.Now };
+            //UserCalculator c2 = new UserCalculator { UserID = 2, OperationName = "Кредити", Date = DateTime.Now };
             //db.UserCalculators.Add(c);
             //db.UserCalculators.Add(c1);
             //db.UserCalculators.Add(c2);
             //db.SaveChanges();
 
 
-            #endregion
-            #region Credits
-            //Credit c1 = new Credit { Name = "Карта універсальна", nLink = "https://privatbank.ua/ru/platezhnie-karty/universalna/" };
-            //Credit c2 = new Credit { Name = "Оплата частинами", nLink = "https://chast.privatbank.ua/?lang=uk" };
-            //Credit c3 = new Credit { Name = "Авто в кредит", nLink = "https://privatbank.ua/ru/kredity/avto-v-kredit/#" };
-            //Credit c4 = new Credit { Name = "На житло", nLink = "https://privatbank.ua/ru/kredity/zhilje-v-kredit/" };
+            //#endregion
+            //#region Credits
+            //Credit cr1 = new Credit { Name = "Карта універсальна", nLink = "https://privatbank.ua/ru/platezhnie-karty/universalna/" };
+            //Credit cr2 = new Credit { Name = "Оплата частинами", nLink = "https://chast.privatbank.ua/?lang=uk" };
+            //Credit cr3 = new Credit { Name = "Авто в кредит", nLink = "https://privatbank.ua/ru/kredity/avto-v-kredit/#" };
+            //Credit cr4 = new Credit { Name = "На житло", nLink = "https://privatbank.ua/ru/kredity/zhilje-v-kredit/" };
 
-            //db.Credits.Add(c1);
-            //db.Credits.Add(c2);
-            //db.Credits.Add(c3);
-            //db.Credits.Add(c4);
+            //db.Credits.Add(cr1);
+            //db.Credits.Add(cr2);
+            //db.Credits.Add(cr3);
+            //db.Credits.Add(cr4);
             //db.SaveChanges();
-            #endregion
+            //#endregion
+
+            //return null;
 
 
-
-            
         }
 
         public string RegisterUser(User user)
@@ -195,7 +191,6 @@ namespace BankService
             }
             else
             {
-
 
                 try
                 {
@@ -216,8 +211,8 @@ namespace BankService
 
         public void UpdateCalculator(UserCalculator calc)
         {
-            
-           db.UserCalculators.Add(calc);
+
+            db.UserCalculators.Add(calc);
             db.SaveChanges();
         }
     }

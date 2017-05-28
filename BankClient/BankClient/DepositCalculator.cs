@@ -69,7 +69,7 @@ namespace BankClient
             chart1.DataBind();
 
 
-
+            label5.Text = data[data.Count - 1].Amount.ToString();
             UserCalculator c = new UserCalculator { Date = DateTime.Now, UserID = _bankService.GetUserIDByEmail(MainForm.UserEmail), OperationName = "Депозити" };
             _bankService.UpdateCalculator(c);
         }
@@ -104,7 +104,7 @@ namespace BankClient
             chart1.DataSource = data;
             chart1.DataBind();
 
-
+            label5.Text = data[data.Count - 1].Amount.ToString();
 
             UserCalculator c = new UserCalculator { Date = DateTime.Now, UserID = _bankService.GetUserIDByEmail(MainForm.UserEmail), OperationName = "Депозити" };
             _bankService.UpdateCalculator(c);

@@ -146,7 +146,7 @@ namespace BankClient
 
 
                 const string fromPassword = "89ZXcvbNM";
-                const string subject = "Додатковы питання!";
+                const string subject = "Додаткові питання!";
                 string body = details;
 
                 var smtp = new SmtpClient

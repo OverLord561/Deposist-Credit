@@ -152,7 +152,7 @@
             this.кредитиToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.кредитиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("кредитиToolStripMenuItem.Image")));
             this.кредитиToolStripMenuItem.Name = "кредитиToolStripMenuItem";
-            this.кредитиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.кредитиToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.кредитиToolStripMenuItem.Text = "Кредити";
             this.кредитиToolStripMenuItem.Click += new System.EventHandler(this.кредитиToolStripMenuItem_Click);
             // 
@@ -161,7 +161,7 @@
             this.депозитиToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.депозитиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("депозитиToolStripMenuItem.Image")));
             this.депозитиToolStripMenuItem.Name = "депозитиToolStripMenuItem";
-            this.депозитиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.депозитиToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.депозитиToolStripMenuItem.Text = "Депозити";
             this.депозитиToolStripMenuItem.Click += new System.EventHandler(this.депозитиToolStripMenuItem_Click);
             // 
@@ -239,7 +239,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 31);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Розіслати";
+            this.button1.Text = "Оповістити";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -283,9 +283,9 @@
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(26, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(399, 17);
+            this.label3.Size = new System.Drawing.Size(403, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Операції  - розрахунок калькулятор кредитів, депозитівю.";
+            this.label3.Text = "Операції  - розрахунок кредитних та депозитних операцій.";
             // 
             // label4
             // 
